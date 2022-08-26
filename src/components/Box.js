@@ -1,21 +1,15 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-// import DatePicker from "react-datepicker";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 import "./Box.css";
 const Box = () => {
   const [startDate, setDate] = useState(new Date());
-  const memoStartDate = useMemo(() => startDate, []);
   const [showCalender, setShowCalender] = useState(false);
-  // const DatePickerRef = useRef();
   let values = { food: 33, shopping: 33, movies: 33 };
   let total = values.food + values.shopping + values.movies;
-  const calenderinput = useRef();
   const handlecalenderinput = () => {
-    // alert("open calender");
     setShowCalender(!showCalender);
-    // DatePickerRef.current.setFocus(true);
   };
   useEffect(() => {}, []);
   return (
@@ -37,20 +31,7 @@ const Box = () => {
                   <Calendar onChange={setDate} value={startDate} />
                 </div>
               )}
-
-              {/* <DatePicker
-                className="wrapperClassName"
-                selected={startDate}
-                onChange={(date) => setDate(date)}
-                ref={DatePickerRef}
-                dateFormat="MM/yyyy"
-                onKeyDown={(e) => {
-                  e.preventDefault();
-                }}
-              /> */}
             </div>
-            {/* this month */}
-            {/*  */}
             <div className="cont-svg">
               <svg
                 className="svg"
@@ -60,7 +41,6 @@ const Box = () => {
                 y="0"
                 version="1.1"
                 viewBox="0 0 29 29"
-                //   xml:space="preserve"
               >
                 <path
                   fill="none"
